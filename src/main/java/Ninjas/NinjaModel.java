@@ -1,5 +1,6 @@
-package dev.sinval.CadastroDeNinjas;
+package Ninjas;
 
+import Missoes.MissoesModel;
 import jakarta.persistence.*;
 
 
@@ -14,6 +15,9 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // chave estrangeira
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
